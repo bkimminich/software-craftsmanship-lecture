@@ -18,3 +18,7 @@
 
 ## Continuous Integration
 
+---
+
+# Coding Dojos
+

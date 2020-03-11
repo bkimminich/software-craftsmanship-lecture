@@ -19,7 +19,7 @@
    Testing, Legacy Testing)
 6. [Test Driven Development](slides/01-06-tdd.md) (TDD)
 7. [Agile Development Techniques](slides/01-07-agile_techniques.md)
-   (Pair Programming, Collective Code Ownership, CI)
+   (Pair Programming, Collective Code Ownership, CI, Dojos)
 8. [Code Quality Tools](slides/01-08-code_quality_tools.md) (Linters,
    Static Code Analysis, Software Composition Analysis)
 
