@@ -10,15 +10,13 @@
 
 # Bjoern Kimminich
 
-* [Nordakademie](https://www.nordakademie.de/) Graduate (I99a)
-* IT Architect / AppSec Officer at
+* Manager Architecture Governance + AppSec at
   [Kuehne + Nagel](http://kuehne-nagel.com/)
 * Lecturer at [Nordakademie](https://www.nordakademie.de/) since 2009
 * Volunteer in the
   [Open Web Application Security Project](https://owasp.org/)
-* Board Member of the
-  [German OWASP Chapter](https://www.owasp.org/index.php/Germany)
 * Project Lead of the [OWASP Juice Shop](https://owasp-juice.shop)
+* Author of the ["Trading Card Game" Kata](http://codingdojo.org/kata/TradingCardGame/)
 
 ---
 
@@ -26,7 +24,7 @@
 
 #### Email
 
-* <bjoern.kimminich@nordakademie.de>
+* <bjoern@kimminich.de>
   <small>([062A 85A8 CBFB DCDA](https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda))</small>
 
 #### Miscellaneous
@@ -86,21 +84,19 @@ the entire course in advance as content might change during the course!_
    Testing, Legacy Testing)
 6. [Test Driven Development](01-06-tdd.md) (TDD)
 7. [Agile Development Techniques](01-07-agile_techniques.md) (Pair
-   Programming, Collective Code Ownership, CI)
+   Programming, Collective Code Ownership, CI, Dojos)
 8. [Code Quality Tools](01-08-code_quality_tools.md) (Linters, Static
    Code Analysis, Software Composition Analysis)
 
 ---
 
-# Schedule
-
-* **Thursdays, xx:xx - xx:xx**
-* 9 lectures (xx.xx. - xx.xx.xx)
-
----
-
 # Recommended Resources
 
-* Martin: Clean Code, 2008
-* Martin: The Clean Coder, 2011
+* [The Robert C. Martin Clean Code Collection](https://www.goodreads.com/book/show/13136186-the-robert-c-martin-clean-code-collection)
+  * Martin: Clean Code, 2008
+  * Martin: The Clean Coder, 2011
+
+<!-- -->
+
+* <https://cleancoders.com> (:moneybag:)
 
