@@ -145,7 +145,7 @@ private final IContainerDao cd;
 
 ---
 
-# Abbreviations easily get out of control (:trollface:)
+# Abbreviations easily get out of control
 
 ```java
 private final IShipmentSearchDao ssd;
@@ -163,6 +163,16 @@ private final IStatusDao std;
 ---
 
 # Avoid indistinguishable characters
+
+<pre>
+int a = l;
+if (O == l)
+  a = 0l;
+else
+  I = 01;
+</pre>
+
+even if they might be somewhat distinguishable in certain fonts!
 
 ```java
 int a = l;
@@ -232,15 +242,169 @@ class SwotService
 
 ---
 
+# Redundant context noise
+
+```java
+ty.universi.tcg.actionblocks.ActionAction
+ty.universi.tcg.actionblocks.ActionBlock
+ty.universi.tcg.actionblocks.ActionCard
+ty.universi.tcg.actionblocks.ActionDamage
+ty.universi.tcg.actionblocks.ActionDiscard
+ty.universi.tcg.actionblocks.ActionEvaluate
+ty.universi.tcg.actionblocks.ActionLevel
+ty.universi.tcg.actionblocks.ActionResource
+ty.universi.tcg.actionblocks.ActionSpecial_Blood
+ty.universi.tcg.actionblocks.ActionSpecial_Flood
+ty.universi.tcg.actionblocks.ActionSpecial_LuckyFind
+ty.universi.tcg.actionblocks.ActionSpecial_Parity
+ty.universi.tcg.actionblocks.ActionSpecial_PureMagic
+ty.universi.tcg.actionblocks.ActionSpecial_Raise
+ty.universi.tcg.actionblocks.ActionSpecial_Santa
+ty.universi.tcg.actionblocks.ActionSpecial_Shift
+ty.universi.tcg.actionblocks.ActionSpecial_Smith
+ty.universi.tcg.actionblocks.ActionSpecial_Spy
+ty.universi.tcg.actionblocks.ActionSpecial_Thief
+```
+
+---
+
+# Proper packaging over repetitive naming
+
+```java
+ty.universi.tcg.actions.Action
+ty.universi.tcg.actions.Block
+ty.universi.tcg.actions.Card
+ty.universi.tcg.actions.Damage
+ty.universi.tcg.actions.Discard
+ty.universi.tcg.actions.Evaluate
+ty.universi.tcg.actions.Level
+ty.universi.tcg.actions.Resource
+ty.universi.tcg.actions.special.Blood
+ty.universi.tcg.actions.special.Flood
+ty.universi.tcg.actions.special.LuckyFind
+ty.universi.tcg.actions.special.Parity
+ty.universi.tcg.actions.special.PureMagic
+ty.universi.tcg.actions.special.Raise
+ty.universi.tcg.actions.special.Santa
+ty.universi.tcg.actions.special.Shift
+ty.universi.tcg.actions.special.Smith
+ty.universi.tcg.actions.special.Spy
+ty.universi.tcg.actions.special.Thief
+```
+
+---
+
 <!-- _footer: Martin: The Robert C. Martin Clean Code Collection, Pos. 1177 -->
 
-# Encoding & Mappings (:bulb:)
+# Encoding & Context (:bulb:)
 
 * Stick to problem or solution domain names
 * Follow commonly accepted naming conventions...
 * ...and change any home-grown bad ones
 
-:dart: _Don't force the reader to translate your names into ones they use and understand._
+:dart: _Don't force the reader to translate your names into ones they
+use and understand._
+
+---
+
+# Many words for one concept (:-1:)
+
+```java
+interface BatComputer {
+  BatReport<Chemical> analyseChemical(Chemical chemical);
+  BatReport<Explosive> analyzeExplosive(Explosive explosive);
+  BatReport<Tissue> dissectTissue(Tissue tissue);
+  BatReport<Fingerprint> parseFingerprint(Fingerprint fingerprint);
+}
+```
+
+---
+
+# One word per concept (:+1:)
+
+```java
+interface BatComputer {
+  BatReport<Chemical> analyzeChemical(Chemical chemical);
+  BatReport<Explosive> analyzeExplosive(Explosive explosive);
+  BatReport<Tissue> analyzeTissue(Tissue tissue);
+  BatReport<Fingerprint> analyzeFingerprint(Fingerprint fingerprint);
+}
+```
+
+---
+
+# One word for two purposes (:-1:)
+
+```java
+interface BatComputer {
+  BatReport<Chemical> analyzeChemical(Chemical chemical);
+  BatReport<Explosive> analyzeExplosive(Explosive explosive);
+  BatReport<Tissue> analyzeTissue(Tissue tissue);
+  BatReport<Fingerprint> analyzeFingerprint(Fingerprint fingerprint);
+
+  boolean analyzeBatPhoneOnHook(BatPhone phone);
+  boolean analyzeBatCapeIroned(BatCape cape);
+  double analyzeBatMobileGasoline(BatMobile car);
+  int analyzeBatCopterKerosene(BatCopter helicopter);
+}
+```
+
+---
+
+# Two Words for two Purposes (:+1:)
+
+```java
+interface BatComputer {
+  BatReport<Chemical> analyzeChemical(Chemical chemical);
+  BatReport<Explosive> analyzeExplosive(Explosive explosive);
+  BatReport<Tissue> analyzeTissue(Tissue tissue);
+  BatReport<Fingerprint> analyzeFingerprint(Fingerprint fingerprint);
+
+  boolean monitorBatPhoneOnHook(BatPhone phone);
+  boolean monitorBatCapeIroned(BatCape cape);
+  double monitorBatMobileGasoline(BatMobile car);
+  int monitorBatCopterKerosene(BatCopter helicopter);
+}
+```
+
+---
+
+# Split interfaces by responsibility (:100:)
+
+```java
+interface BatComputer {
+  BatReport&lt;Chemical&gt; analyzeChemical(Chemical chemical);
+  BatReport&lt;Explosive&gt; analyzeExplosive(Explosive explosive);
+  BatReport&lt;Tissue&gt; analyzeTissue(Tissue tissue);
+  BatReport&lt;Fingerprint&gt; analyzeFingerprint(Fingerprint fingerprint);
+}
+
+interface BatStatusMonitor {
+  boolean isBatPhoneOnHook(BatPhone phone);
+  boolean isBatCapeIroned(BatCape cape);
+  double getRemainingBatMobileGasoline(BatMobile car);
+  int getRemainingBatCopterKerosene(BatCopter helicopter);
+}
+```
+
+---
+
+<!-- _footer: Martin: The Robert C. Martin Clean Code Collection, Pos. 1211-1240 -->
+
+# Consistent Lexicon (:bulb:)
+
+* Pick one word per **concept**...
+* ...while avoiding to use the same word for two **purposes**
+
+---
+
+# Takeaways (:dart:)
+
+* Think about **good names** for _everything_ in your code
+* **Rename** all _badly named things_ once you've deciphered their
+  meaning
+* _Always_ avoid to send readers of your code into **Batman Mode**
+  (:bat:)
 
 ---
 
