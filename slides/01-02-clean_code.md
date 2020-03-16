@@ -113,88 +113,67 @@ public enum PlayerType {
 
 ---
 
-# Meaning
-
----
-
-# What might these services do? (:bat:)
-
-```
-Object - java.lang
-|-AbstractService - de.logisticsworldwi.tools.impl
-   |-AbstractSearchService - de.logisticsworldwi.shipment.impl
-      |-LevelSearchService - de.logisticsworldwi.shipment.impl
-        |-FirstLevelSearchService - de.logisticsworldwi.shipment.impl
-        |-SecondLevelSearchService - de.logisticsworldwi.shipment.impl
-          |-SecondLevelSearchBlackDeckerService - de.logisticsworldwi.shipment.impl
-          |-SecondLevelSearchGlobalCustomerService - de.logisticsworldwi.shipment.impl
-```
-
----
-
-# Does the JavaDoc help? (:bat:)
-
-```java
-/**
- * level search service
- *
- * @author [censored]
-/*
-public class LevelSearchService {...}
-```
-
----
-
-# Maybe deeper down the class hierarchy? (:bat:)
-
-```java
-/**
- * This service provides methods for the Level-1 Shipment search.
- *
- * @author [censored]
-/*
-public class FirstLevelSearchService extends LevelSearchService {...}
-```
-
-```java
-/**
- * This service provides methods for the Level-2 Shipment search.
- *
- * @author [censored]
-/*
-public class SecondLevelSearchService extends LevelSearchService {...}
-```
-
----
-
-# What `Level` means in this domain's language
-
-* At the <https://logistics-worldwi.de> IT department the search for
-  **publicly visible tracking information** of shipments is often called
-  **First Level** Search
-* The search for **more detailed (and sensitive) information** (which
-  requires authentication) is often called **Second Level** Search
-
-:information_source: _These are by no means official logistics terms!
-They are not even used corporate-wide by <https://logistics-worldwi.de>
-IT or business!_
-
----
-
-# Say what you mean
-
-```java
-public class PublicTrackingShipmentSearchService extends ShipmentSearchService {}
-public class FullVisibilityShipmentSearchService extends ShipmentSearchService {}
-```
+# Disinformation
 
 ---
 
 # Disinformation
 
+```java
+private final XXXXXXXXXXXXXXXXXX ssd;
+private final XXXXXXXXXXXX sd;
+private final XXXXXXXXXXXXX cd;
+```
+
 ---
 
-:wrench: **TODO**
+<!-- _footer: Image from https://edv-webdesign-seo.de/datenrettung.html -->
+
+# _Entrenched_ vs. Intended Meaning
+
+```java
+private final XXXXXXXXXXXXXXXXXX ssd;
+private final XXXXXXXXXXXX sd;
+private final XXXXXXXXXXXXX cd;
+```
+
+![Storage media](images/01-02-clean_code/usb-stick_sd-karte_ssd_datenspeicher_festplatte.png)
+
+---
+
+# Entrenched vs. _Intended_ Meaning
+
+```java
+private final IShipmentSearchDao ssd;
+private final IShipmentDao sd;
+private final IContainerDao cd;
+```
+
+---
+
+# Abbreviations easily get out of hand (:warning:)
+
+```java
+private final IShipmentSearchDao ssd;
+private final IShipmentDao sd;
+private final IContainerSearchDao csd;
+private final IContainerDao cd;
+private final IShipmentStatusSearchDao sstsd;
+private final IShipmentStatusDao sstd;
+private final ISpecialShipmentSearchDao spssd;
+private final ISpecialShipmentDao spsd;
+private final IStatusSearchDao stsd;
+private final IStatusDao std;
+```
+
+---
+
+# No Disinformation (:bulb:)
+
+* Do not leave false clues
+* Do not obscure the meaning of code
+* Consider entrenched vs. intended meaning
+* Avoid inconsistent spelling
 
 ---
 
@@ -210,7 +189,12 @@ public class FullVisibilityShipmentSearchService extends ShipmentSearchService {
 
 ---
 
-:wrench: **TODO**
+# Prefix `I` for interfaces
+
+* Preceding `I` is a distraction at best...
+* ...and too much information at worst
+
+:dart: **Leave interfaces unadorned!**
 
 ---
 
