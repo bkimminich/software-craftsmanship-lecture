@@ -172,7 +172,7 @@ else
   I = 01;
 </pre>
 
-even if they might be somewhat distinguishable in certain fonts!
+even if they might be more distinguishable in certain fonts and highlighting!
 
 ```java
 int a = l;
@@ -218,7 +218,7 @@ private void maxFourEqualValues(int[] werte) {
 
 ---
 
-# No unpronouncable names
+# No unpronouncable names (:mute:)
 
 ```java
 class BaseDxoProcessMilestone7600LstBo {}
@@ -245,23 +245,23 @@ class SwotService {}
 # Redundant context noise
 
 ```java
-ty.universi.tcg.actionblocks.ActionAction
-ty.universi.tcg.actionblocks.ActionBlock
-ty.universi.tcg.actionblocks.ActionCard
-ty.universi.tcg.actionblocks.ActionDamage
-ty.universi.tcg.actionblocks.ActionDiscard
-ty.universi.tcg.actionblocks.ActionEvaluate
-ty.universi.tcg.actionblocks.ActionLevel
-ty.universi.tcg.actionblocks.ActionResource
-ty.universi.tcg.actionblocks.ActionSpecial_Blood
-ty.universi.tcg.actionblocks.ActionSpecial_LuckyFind
-ty.universi.tcg.actionblocks.ActionSpecial_Parity
-ty.universi.tcg.actionblocks.ActionSpecial_PureMagic
-ty.universi.tcg.actionblocks.ActionSpecial_Raise
-ty.universi.tcg.actionblocks.ActionSpecial_Shift
-ty.universi.tcg.actionblocks.ActionSpecial_Smith
-ty.universi.tcg.actionblocks.ActionSpecial_Spy
-ty.universi.tcg.actionblocks.ActionSpecial_Thief
+ty.universi.cardgame.ActionAction
+ty.universi.cardgame.ActionBlock
+ty.universi.cardgame.ActionCard
+ty.universi.cardgame.ActionDamage
+ty.universi.cardgame.ActionDiscard
+ty.universi.cardgame.ActionEvaluate
+ty.universi.cardgame.ActionLevel
+ty.universi.cardgame.ActionResource
+ty.universi.cardgame.ActionSpecial_Blood
+ty.universi.cardgame.ActionSpecial_LuckyFind
+ty.universi.cardgame.ActionSpecial_Parity
+ty.universi.cardgame.ActionSpecial_PureMagic
+ty.universi.cardgame.ActionSpecial_Raise
+ty.universi.cardgame.ActionSpecial_Shift
+ty.universi.cardgame.ActionSpecial_Smith
+ty.universi.cardgame.ActionSpecial_Spy
+ty.universi.cardgame.ActionSpecial_Thief
 ```
 
 ---
@@ -269,23 +269,23 @@ ty.universi.tcg.actionblocks.ActionSpecial_Thief
 # Proper packaging over repetitive naming
 
 ```java
-ty.universi.tcg.actions.AbstractAction
-ty.universi.tcg.actions.Block
-ty.universi.tcg.actions.Card
-ty.universi.tcg.actions.Damage
-ty.universi.tcg.actions.Discard
-ty.universi.tcg.actions.Evaluate
-ty.universi.tcg.actions.Level
-ty.universi.tcg.actions.Resource
-ty.universi.tcg.actions.special.Blood
-ty.universi.tcg.actions.special.LuckyFind
-ty.universi.tcg.actions.special.Parity
-ty.universi.tcg.actions.special.PureMagic
-ty.universi.tcg.actions.special.Raise
-ty.universi.tcg.actions.special.Shift
-ty.universi.tcg.actions.special.Smith
-ty.universi.tcg.actions.special.Spy
-ty.universi.tcg.actions.special.Thief
+ty.universi.cardgame.Card
+ty.universi.cardgame.Level
+ty.universi.cardgame.Resource
+ty.universi.cardgame.actions.AbstractAction
+ty.universi.cardgame.actions.Block
+ty.universi.cardgame.actions.Damage
+ty.universi.cardgame.actions.Discard
+ty.universi.cardgame.actions.Evaluate
+ty.universi.cardgame.actions.special.Blood
+ty.universi.cardgame.actions.special.LuckyFind
+ty.universi.cardgame.actions.special.Parity
+ty.universi.cardgame.actions.special.PureMagic
+ty.universi.cardgame.actions.special.Raise
+ty.universi.cardgame.actions.special.Shift
+ty.universi.cardgame.actions.special.Smith
+ty.universi.cardgame.actions.special.Spy
+ty.universi.cardgame.actions.special.Thief
 ```
 
 ---
