@@ -27,11 +27,7 @@
 
 ---
 
-# Intent
-
----
-
-# Intent
+# What might these functions do? (:bat:)
 
 ```java
 // ...
@@ -39,8 +35,6 @@ player1.setmenOCom(1);
 player2.setmenOCom(0);
 // ...
 ```
-
-:bat: _Can you figure out what these functions are supposed to do?_
 
 ---
 
@@ -82,7 +76,7 @@ public void setmenOCom(int a) {
 
 # Reveal your intent
 
-```
+```java
 import static PlayerType.*;
 // ...
 player1.setType(HUMAN);
@@ -90,7 +84,7 @@ player2.setType(COMPUTER);
 // ...
 ```
 
-```
+```java
 public void setType(PlayerType type) {
   this.type = type;
 }
@@ -117,7 +111,7 @@ public enum PlayerType {
 
 ---
 
-# Disinformation
+# What might `ssd`, `sd` and `cd` mean?
 
 ```java
 private final XXXXXXXXXXXXXXXXXX ssd;
@@ -151,7 +145,7 @@ private final IContainerDao cd;
 
 ---
 
-# Abbreviations easily get out of hand (:warning:)
+# Abbreviations easily get out of control (:trollface:)
 
 ```java
 private final IShipmentSearchDao ssd;
@@ -168,6 +162,18 @@ private final IStatusDao std;
 
 ---
 
+# Avoid indistinguishable characters
+
+```java
+int a = l;
+if (O == l)
+  a = 0l;
+else
+  I = 01;
+```
+
+---
+
 # No Disinformation (:bulb:)
 
 * Do not leave false clues
@@ -177,21 +183,47 @@ private final IStatusDao std;
 
 ---
 
-# Language
+# No language mashups
+
+```java
+private void maxFourEqualValues(int[] werte) {
+  int testValue = werte[0];
+  int equalValues = 1;
+
+  for (int i = 1; i < 7; i++) {
+    if (testValue == werte[i]) {
+      equalValues++;
+    } else {
+      equalValues = 1;
+      testValue = werte[i];
+    }
+    if (equalValues == 5) {
+      throw new IllegalArgumentException(
+            "Ein Wert wurde häufiger als 4x übergeben.
+            + Betroffener Wert: " + testValue);
+    }
+  }
+}
+```
 
 ---
 
-:wrench: **TODO**
+# No unpronouncable names
 
----
-
-# Encoding
+```java
+class BaseDxoProcessMilestone7600LstBo
+class Dx2FltrShipmentCustPartyXDto 
+class GyqfaChBppResDao
+class SegmentG041Data
+class KnlobiLocation
+class SwotService
+```
 
 ---
 
 <!-- _footer: Martin: The Robert C. Martin Clean Code Collection, Pos. 1185 -->
 
-# Prefix `I` for interfaces
+# Avoid prefix `I` for interfaces
 
 * Preceding `I` is a distraction at best...
 * ...and too much information at worst
@@ -200,19 +232,15 @@ private final IStatusDao std;
 
 ---
 
-# Consistency
+<!-- _footer: Martin: The Robert C. Martin Clean Code Collection, Pos. 1177 -->
 
----
+# Encoding & Mappings (:bulb:)
 
-:wrench: **TODO**
+* Stick to problem or solution domain names
+* Follow commonly accepted naming conventions...
+* ...and change any home-grown bad ones
 
----
-
-# The Scope Rule
-
----
-
-:wrench: **TODO**
+:dart: _Don't force the reader to translate your names into ones they use and understand._
 
 ---
 
