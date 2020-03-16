@@ -189,6 +189,8 @@ private final IStatusDao std;
 
 ---
 
+<!-- _footer: Martin: The Robert C. Martin Clean Code Collection, Pos. 1185 -->
+
 # Prefix `I` for interfaces
 
 * Preceding `I` is a distraction at best...
