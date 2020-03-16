@@ -221,12 +221,12 @@ private void maxFourEqualValues(int[] werte) {
 # No unpronouncable names
 
 ```java
-class BaseDxoProcessMilestone7600LstBo
-class Dx2FltrShipmentCustPartyXDto 
-class GyqfaChBppResDao
-class SegmentG041Data
-class KnlobiLocation
-class SwotService
+class BaseDxoProcessMilestone7600LstBo {}
+class Dx2FltrShipmentCustPartyXDto {} 
+class GyqfaChBppResDao {}
+class SegmentG041Data {}
+class KnlobiLocation {}
+class SwotService {}
 ```
 
 ---
@@ -254,12 +254,10 @@ ty.universi.tcg.actionblocks.ActionEvaluate
 ty.universi.tcg.actionblocks.ActionLevel
 ty.universi.tcg.actionblocks.ActionResource
 ty.universi.tcg.actionblocks.ActionSpecial_Blood
-ty.universi.tcg.actionblocks.ActionSpecial_Flood
 ty.universi.tcg.actionblocks.ActionSpecial_LuckyFind
 ty.universi.tcg.actionblocks.ActionSpecial_Parity
 ty.universi.tcg.actionblocks.ActionSpecial_PureMagic
 ty.universi.tcg.actionblocks.ActionSpecial_Raise
-ty.universi.tcg.actionblocks.ActionSpecial_Santa
 ty.universi.tcg.actionblocks.ActionSpecial_Shift
 ty.universi.tcg.actionblocks.ActionSpecial_Smith
 ty.universi.tcg.actionblocks.ActionSpecial_Spy
@@ -271,7 +269,7 @@ ty.universi.tcg.actionblocks.ActionSpecial_Thief
 # Proper packaging over repetitive naming
 
 ```java
-ty.universi.tcg.actions.Action
+ty.universi.tcg.actions.AbstractAction
 ty.universi.tcg.actions.Block
 ty.universi.tcg.actions.Card
 ty.universi.tcg.actions.Damage
@@ -280,12 +278,10 @@ ty.universi.tcg.actions.Evaluate
 ty.universi.tcg.actions.Level
 ty.universi.tcg.actions.Resource
 ty.universi.tcg.actions.special.Blood
-ty.universi.tcg.actions.special.Flood
 ty.universi.tcg.actions.special.LuckyFind
 ty.universi.tcg.actions.special.Parity
 ty.universi.tcg.actions.special.PureMagic
 ty.universi.tcg.actions.special.Raise
-ty.universi.tcg.actions.special.Santa
 ty.universi.tcg.actions.special.Shift
 ty.universi.tcg.actions.special.Smith
 ty.universi.tcg.actions.special.Spy
@@ -373,10 +369,10 @@ interface BatComputer {
 
 ```java
 interface BatComputer {
-  BatReport&lt;Chemical&gt; analyzeChemical(Chemical chemical);
-  BatReport&lt;Explosive&gt; analyzeExplosive(Explosive explosive);
-  BatReport&lt;Tissue&gt; analyzeTissue(Tissue tissue);
-  BatReport&lt;Fingerprint&gt; analyzeFingerprint(Fingerprint fingerprint);
+  BatRepor<Chemical> analyzeChemical(Chemical chemical);
+  BatReport<Explosive> analyzeExplosive(Explosive explosive);
+  BatReport<Tissue> analyzeTissue(Tissue tissue);
+  BatReport<Fingerprint> analyzeFingerprint(Fingerprint fingerprint);
 }
 
 interface BatStatusMonitor {
@@ -398,13 +394,19 @@ interface BatStatusMonitor {
 
 ---
 
-# Takeaways (:dart:)
+# Key takeaways (:dart:)
 
 * Think about **good names** for _everything_ in your code
 * **Rename** all _badly named things_ once you've deciphered their
   meaning
-* _Always_ avoid to send readers of your code into **Batman Mode**
+* _Always_ avoid sending readers of your code into **Batman Mode**
   (:bat:)
+
+---
+
+# Exercise 2.1 (:house:)
+
+:wrench: **TODO**
 
 ---
 
